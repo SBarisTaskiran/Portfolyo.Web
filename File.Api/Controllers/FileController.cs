@@ -8,7 +8,7 @@ namespace File.Api.Controllers
     public class FileController : ControllerBase
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly string _filePath;
+        private readonly string _filePath = null!;
 
         public FileController(IWebHostEnvironment webHostEnvironment)
         {
