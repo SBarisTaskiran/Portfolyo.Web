@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\theme\" />
+    <None Include="wwwroot\theme\.github\workflows\handle-new-issue-comment.yml" />
+    <None Include="wwwroot\theme\.github\workflows\handle-new-issue.yml" />
+    <None Include="wwwroot\theme\.github\workflows\issue-staler.yml" />
   </ItemGroup>
 
 </Project>
