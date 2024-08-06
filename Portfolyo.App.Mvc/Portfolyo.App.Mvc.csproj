@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\theme\.DS_Store" />
+    <None Include="wwwroot\theme\css\.DS_Store" />
+    <None Include="wwwroot\theme\css\bootstrap\.DS_Store" />
+    <None Include="wwwroot\theme\css\css\.DS_Store" />
+    <None Include="wwwroot\theme\fonts\.DS_Store" />
+    <None Include="wwwroot\theme\fonts\flaticon\.DS_Store" />
+    <None Include="wwwroot\theme\fonts\flaticon\font\.DS_Store" />
+    <None Include="wwwroot\theme\fonts\ionicons\fonts\.DS_Store" />
+    <None Include="wwwroot\theme\images\.DS_Store" />
+    <None Include="wwwroot\theme\js\.DS_Store" />
+    <None Include="wwwroot\theme\scss\.DS_Store" />
+    <None Include="wwwroot\theme\scss\bootstrap\.DS_Store" />
+  </ItemGroup>
+
+</Project>

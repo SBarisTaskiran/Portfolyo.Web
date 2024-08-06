@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using App.Data;
 using App.Data.Entities.Infrastructure;
+using System.ComponentModel.DataAnnotations;
 
 namespace Auth.Api.Data.Models
 {
@@ -9,6 +10,8 @@ namespace Auth.Api.Data.Models
     {
 
         public string UserName { get; set; } = null!;
+        public string Email { get; set; } = null!;
+
         public string PasswordHash { get; set; } = null!;
         public int RoleId { get; set; }
         public bool Enabled { get; set; } = true;
@@ -25,6 +28,8 @@ namespace Auth.Api.Data.Models
             builder.HasKey(e => e.Id);
             builder.Property(e => e.UserName).IsRequired().HasMaxLength(50);
             builder.HasIndex(e => e.UserName).IsUnique();
+            builder.Property(e => e.Email).IsRequired().HasMaxLength(100);
+            builder.HasIndex(e => e.Email).IsUnique();
             builder.Property(e => e.PasswordHash).IsRequired().HasMaxLength(255);
             builder.Property(e => e.RoleId).IsRequired();
             builder.Property(e => e.Enabled).IsRequired().HasDefaultValue(true);
