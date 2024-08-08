@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.Data.DTOs.Auth
+namespace App.Models.DTO.Auth
 {
     public class AuthForgotPasswordRequest
     {

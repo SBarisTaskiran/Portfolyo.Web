@@ -8,7 +8,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
-using App.Data.DTOs.Auth;
+using App.Models.DTO.Auth;
 
 namespace App.Services.Concrete
 {
