@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using App.Data.Entities.Infrastructure;
 
-namespace Auth.Api.Data.Models
+namespace App.Data.Entities.Models
 {
     public class RoleEntity : EntityBase
     {
@@ -31,7 +31,7 @@ namespace Auth.Api.Data.Models
             builder.HasData(
                 new RoleEntity() { Id = 1, Name = "admin", CreatedAt = DateTime.UtcNow },
                 new RoleEntity() { Id = 2, Name = "commenter", CreatedAt = DateTime.UtcNow }
-                
+
             );
         }
     }

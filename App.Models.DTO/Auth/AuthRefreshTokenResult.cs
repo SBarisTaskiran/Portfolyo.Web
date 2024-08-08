@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.Data.DTOs.Auth
+namespace App.Models.DTO.Auth
 {
-    public class AuthLoginResult
+    public class AuthRefreshTokenResult
     {
-        public string Token { get; set; } = default!;
+        public string Token { get; set; } = null!;
     }
 }

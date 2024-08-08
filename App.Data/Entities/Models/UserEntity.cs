@@ -4,15 +4,15 @@ using App.Data;
 using App.Data.Entities.Infrastructure;
 using System.ComponentModel.DataAnnotations;
 
-namespace Auth.Api.Data.Models
+namespace App.Data.Entities.Models
 {
     public class UserEntity : EntityBase, IHasEnabled
     {
 
         public string UserName { get; set; } = null!;
         public string Email { get; set; } = null!;
-
         public string PasswordHash { get; set; } = null!;
+        public string? ResetPasswordToken { get; set; }
         public int RoleId { get; set; }
         public bool Enabled { get; set; } = true;
 

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace App.Data.Infrastructure
+namespace App.Data.Entities.Infrastructure
 {
     public interface IDataRepository
     {

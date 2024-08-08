@@ -1,8 +1,7 @@
-﻿using Auth.Api.Data.Models;
-
+﻿using App.Data.Entities.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Auth.Api.Data
+namespace App.Data.Entities
 {
     public class AuthAppDbContext : DbContext
     {
@@ -17,9 +16,9 @@ namespace Auth.Api.Data
         {
             modelBuilder.ApplyConfiguration(new UserEntityConfiguration());
             modelBuilder.ApplyConfiguration(new RoleEntityConfiguration());
-           
+
         }
     }
 
-    
+
 }

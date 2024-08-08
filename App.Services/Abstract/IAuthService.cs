@@ -1,4 +1,4 @@
-﻿using App.Data.DTOs.Auth;
+﻿using App.Models.DTO.Auth;
 using Ardalis.Result;
 using System;
 using System.Collections.Generic;
