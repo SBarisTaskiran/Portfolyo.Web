@@ -1,8 +1,11 @@
-﻿using App.Data.Entities.Infrastructure;
+﻿using System.Collections.Generic;
+using App.Data.Entities.Infrastructure;
 using App.Data.Entities.Models;
 using App.Models.DTO.User;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Hasher = BCrypt.Net.BCrypt;
 
 namespace Auth.Api.Controllers
 {
@@ -19,9 +22,9 @@ namespace Auth.Api.Controllers
             {
                 return BadRequest();
             }
-
+            string hashedPassword = Hasher.HashPassword(login.Password);
             var user = await dataRepository.GetAll<UserEntity>()
-                .Where(u => u.Enabled && u.Email == login.Email && u.PasswordHash == login.Password)
+                .Where(u => u.Enabled && u.Email == login.Email)
                 .Select(u => new UserGetResult
                 {
                     Id = u.Id,
@@ -29,12 +32,13 @@ namespace Auth.Api.Controllers
                     UserName = u.UserName,
                     Role = u.Role.Name,
                     Enabled = u.Enabled,
+                    PasswordHash = u.PasswordHash
                 })
                 .SingleOrDefaultAsync();
 
-            if (user is null)
+            if (user == null || !BCrypt.Net.BCrypt.Verify(login.Password, user.PasswordHash))
             {
-                return NotFound();
+                throw new UnauthorizedAccessException("Geçersiz email veya şifre.");
             }
 
             return Ok(user);

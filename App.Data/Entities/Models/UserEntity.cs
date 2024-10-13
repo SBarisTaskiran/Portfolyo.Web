@@ -50,8 +50,8 @@ namespace App.Data.Entities.Models
         {
             string password = BCrypt.Net.BCrypt.HashPassword("1234");
             builder.HasData(
-                new UserEntity() { Id = 1, UserName = "admin", Enabled = true, RoleId = 1, PasswordHash = password, CreatedAt = DateTime.UtcNow },
-                new UserEntity() { Id = 2, UserName = "firstCommenter", Enabled = true, RoleId = 2, PasswordHash = password, CreatedAt = DateTime.UtcNow }
+                new UserEntity() { Id = 1, UserName = "admin", Email = "a@a.com", Enabled = true, RoleId = 1, PasswordHash = password, CreatedAt = DateTime.UtcNow },
+                new UserEntity() { Id = 2, UserName = "firstCommenter", Email = "u@u.com", Enabled = true, RoleId = 2, PasswordHash = password, CreatedAt = DateTime.UtcNow }
 
             );
         }
